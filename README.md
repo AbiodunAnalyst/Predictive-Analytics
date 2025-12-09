@@ -25,17 +25,17 @@ Exploratory analysis focused on understanding the operational conditions associa
 Based on Figures 4–10 in Chapter 4 :contentReference[oaicite:2]{index=2}:
 
 - **Higher cutting speeds** increased failure likelihood. ![](figure4.jpg)
-- **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload.
-- **Power consumption spikes** were observed shortly before failures.
-- **Cooling variability** indicated overheating or excessive thermal load.
-- **Longer process times** correlated moderately with increased failure probability.
+- **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload. ![](figure5.jpg) ![](figure6.jpg)
+- **Power consumption spikes** were observed shortly before failures. ![](figure7.jpg)
+- **Cooling variability** indicated overheating or excessive thermal load. ![](figure8.jpg)
+- **Longer process times** correlated moderately with increased failure probability. ![](figure9.jpg)
 
 These patterns informed feature engineering decisions and validated the relevance of sensor metrics in predicting machine health.
 
 ---
 
 ## 🔗 2.1 Correlation Analysis
-
+![](figure10.jpg)
 A full correlation matrix (Figure 10 in Chapter 4) revealed important relationships:  
 Source: Correlation section :contentReference[oaicite:3]{index=3}
 
