@@ -3,7 +3,6 @@
 
 This section summarises the complete analytical workflow used in this predictive maintenance project from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
 
-
 ---
 
 ## 🔍 1. Dataset Overview
@@ -22,12 +21,15 @@ This substantial class imbalance strongly influenced the modelling strategy, req
 Exploratory analysis focused on understanding the operational conditions associated with failures.
 
 ### **Key Observed Patterns**
-Based on Figures 4–10 in Chapter 4 :contentReference[oaicite:2]{index=2}:
 
 - **Higher cutting speeds** increased failure likelihood. ![](figure4.jpg)
+
 - **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload. ![](figure5.jpg) ![](figure6.jpg)
+
 - **Power consumption spikes** were observed shortly before failures. ![](figure7.jpg)
+
 - **Cooling variability** indicated overheating or excessive thermal load. ![](figure8.jpg)
+
 - **Longer process times** correlated moderately with increased failure probability. ![](figure9.jpg)
 
 These patterns informed feature engineering decisions and validated the relevance of sensor metrics in predicting machine health.
@@ -35,9 +37,8 @@ These patterns informed feature engineering decisions and validated the relevanc
 ---
 
 ## 🔗 2.1 Correlation Analysis
+ 
 ![](figure10.jpg)
-A full correlation matrix (Figure 10 in Chapter 4) revealed important relationships:  
-Source: Correlation section :contentReference[oaicite:3]{index=3}
 
 ### **Strong Positive Correlations**
 - Cutting speed ↔ Feed rate: **0.82**  
@@ -63,8 +64,6 @@ Multiple machine learning models were trained, including:
 - Hyperparameter optimisation using **RandomizedSearchCV** and **Optuna**
 
 This modelling framework addressed the challenge of imbalanced classes while improving model reliability and failure detection recall.  
-Source: Model Analysis section in Chapter 4 :contentReference[oaicite:4]{index=4}
-
 ---
 
 ## 🧪 4. Model Performance
@@ -83,9 +82,7 @@ Three main model configurations were tested:
 - ROC-AUC: **0.998**  
 - Recall: **1.00**  
 
-These results demonstrate exceptional predictive capability — in every optimised configuration, the model achieved **100% recall**, detecting all true failures, which is essential in high-risk predictive maintenance environments.  
-Source: Performance results :contentReference[oaicite:5]{index=5}
-
+These results demonstrate exceptional predictive capability in every optimised configuration, the model achieved **100% recall**, detecting all true failures, which is essential in high-risk predictive maintenance environments.  
 ---
 
 ## 🧩 5. Confusion Matrix Interpretation
@@ -98,7 +95,6 @@ Across optimised models:
 - **True Negatives:** High accuracy  
 
 The models meet industrial reliability requirements where missing a failure can be extremely costly or dangerous.  
-Source: Confusion matrix results in Chapter 4 :contentReference[oaicite:6]{index=6}
 
 ---
 
@@ -113,21 +109,17 @@ Feature importance analysis revealed:
 5. **Cooling Level**
 
 These features were the strongest contributors to failure prediction, supporting the mechanical interpretation of drilling stress and thermal load.  
-Source: Feature importance section :contentReference[oaicite:7]{index=7}
-
 ---
 
 ## 🔄 7. Permutation Importance
 
-Permutation importance confirmed the ranking above by showing that shuffling key features caused significant drops in model performance — especially **Feed Rate** and **Cutting Speed**, which act as core predictive signals.  
-Source: Chapter 4 Permutation Analysis :contentReference[oaicite:8]{index=8}
+Permutation importance confirmed the ranking above by showing that shuffling key features caused significant drops in model performance especially **Feed Rate** and **Cutting Speed**, which act as core predictive signals.  
 
 ---
 
 ## 🖥️ 8. Deployment Using Streamlit
 
 The final optimised model was deployed using a **Streamlit application**, enabling real-time predictions in an interactive environment.  
-Source: Deployment section in Chapter 4 :contentReference[oaicite:9]{index=9}
 
 ### Streamlit App Features:
 
@@ -162,5 +154,4 @@ This chapter demonstrates:
 - Feature and permutation importance for interpretability  
 - Real-time deployment using Streamlit  
 
-This makes the project a strong technical evidence piece for the UK Global Talent Visa.
 
