@@ -61,33 +61,37 @@ It demonstrates:
 
 ---
 
-## 📁 Repository Structure
 
-```bash
-predictive-maintenance/
-├── data/
-│   └── raw/                 # Raw drilling operations dataset
-├── notebooks/
-│   ├── 01_eda.ipynb         # Exploratory analysis
-│   ├── 02_modelling.ipynb   # Baseline models
-│   └── 03_optimisation.ipynb# Tuned models
-├── src/
-│   ├── preprocessing.py     # Cleaning & feature engineering
-│   ├── train_model.py       # Training pipeline
-│   └── utils.py             # Helper functions
-├── models/
-│   └── best_model.pkl       # Saved optimised model
-├── app/
-│   └── streamlit_app.py     # Deployed web application
-└── README.md
+flowchart TD
+    A[📁 Raw Sensor Data<br>Drilling Operations] --> B[🔍 Exploratory Data Analysis<br>- Distributions<br>- Correlations<br>- Failure patterns]
 
+    B --> C[🧹 Data Preparation<br>- Train/Test split<br>- Scaling<br>- Handle imbalance (SMOTE)]
 
+    C --> D[🤖 Baseline Models<br>- Random Forest<br>- XGBoost]
 
+    D --> E[⚙️ Model Optimisation<br>- SMOTE + Random Forest<br>- SMOTE + Optuna<br>- SMOTE + RandomizedSearchCV]
 
+    E --> F[📊 Evaluation<br>- ROC-AUC<br>- Recall (failure class)<br>- Confusion matrix]
 
+    F --> G[🧠 Interpretation<br>- Feature importance<br>- Permutation importance<br>- Failure driver analysis]
 
+    G --> H[🌐 Deployment<br>Streamlit Web App<br>- Input sliders/forms<br>- Failure probability<br>- Actionable output]
+---
 
+flowchart LR
+    subgraph Training_Env[Training Environment]
+      A[📁 Historical Sensor Data] --> B[⚙️ Training Pipeline<br>Python + scikit-learn]
+      B --> C[✅ Optimised Model<br>(pickle/joblib)]
+    end
 
+    C --> D[🧩 Inference Service<br>Streamlit App]
+
+    subgraph User_Env[User Interface]
+      D --> E[👨‍🏭 Operator / Engineer<br>enters machine parameters]
+      E --> D
+    end
+
+---
 
 # 📊 Optimisation of Predictive Maintenance Strategy
 ### Exploratory Analysis • Modelling • Evaluation • Deployment
