@@ -1,7 +1,7 @@
 # 📊 Data Analysis & Interpretation  
 ### Exploratory Analysis • Modelling • Evaluation • Deployment
 
-This section summarises the complete analytical workflow used in this predictive maintenance project — from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
+This section summarises the complete analytical workflow used in this predictive maintenance project from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
 
 
 ---
@@ -24,7 +24,7 @@ Exploratory analysis focused on understanding the operational conditions associa
 ### **Key Observed Patterns**
 Based on Figures 4–10 in Chapter 4 :contentReference[oaicite:2]{index=2}:
 
-- **Higher cutting speeds** increased failure likelihood. ![]()
+- **Higher cutting speeds** increased failure likelihood. ![](figure4)
 - **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload.
 - **Power consumption spikes** were observed shortly before failures.
 - **Cooling variability** indicated overheating or excessive thermal load.
