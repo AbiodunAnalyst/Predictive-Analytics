@@ -1,4 +1,4 @@
-# 📊 Data Analysis & Interpretation  
+# 📊 Optimisation of Predictive Maintenance Strategy
 ### Exploratory Analysis • Modelling • Evaluation • Deployment
 
 This section summarises the complete analytical workflow used in this predictive maintenance project from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
