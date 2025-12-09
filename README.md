@@ -124,7 +124,7 @@ The final optimised model was deployed using a **Streamlit application**, enabli
 
 ### Streamlit App Features:
 
-App ![Predictive_App](https://share.streamlit.io/user/abiodunanalyst)
+**App** *[PredictiveApp](https://share.streamlit.io/user/abiodunanalyst)*
 
 #### **8.1 Input Section**
 Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
