@@ -100,6 +100,7 @@ The models meet industrial reliability requirements where missing a failure can 
 
 ## 🌟 6. Feature Importance
 
+![](figure11.jpg)
 Feature importance analysis revealed:
 
 1. **Feed Rate (vf)**  
@@ -123,6 +124,8 @@ The final optimised model was deployed using a **Streamlit application**, enabli
 
 ### Streamlit App Features:
 
+App ![Predictive_App](https://a8adtfzxaygmffjjqe5ums.streamlit.app)
+
 #### **8.1 Input Section**
 Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
 
@@ -132,8 +135,8 @@ Displays a snapshot of loaded or streamed operational data.
 #### **8.3 Prediction Section**
 Real-time prediction interface that outputs:
 
+- Prediction condition  
 - Probability of failure  
-- Binary prediction (Fail / No Fail)  
 - Recommended maintenance action  
 
 #### **8.4 Results Section**
@@ -145,7 +148,7 @@ This deployment transforms the research model into a **practical industrial tool
 
 # ⭐ Summary of Chapter Contribution
 
-This chapter demonstrates:
+This project demonstrates:
 
 - End-to-end analytical workflow from EDA to deployment  
 - Handling of imbalanced data using SMOTE and Borderline-SMOTE  
