@@ -6,7 +6,6 @@
 
 <p align="center">
   An end-to-end predictive analytics system using Random Forest, XGBoost, SMOTE, and hyperparameter optimisation to forecast drilling machine failures with high recall and near-perfect AUC.
-  Built as part of my MSc Dissertation and included in my UK Global Talent Visa portfolio.
 </p>
 
 <p align="center">
@@ -22,7 +21,7 @@
 ---
 
 <p align="center">
-  <em>This project demonstrates enterprise-level predictive analytics, model optimisation, and ML application development — suitable as technical evidence for the UK Global Talent Visa.</em>
+  <em>This project demonstrates enterprise-level predictive analytics, model optimisation, and ML application development.</em>
 </p>
 
 ---
