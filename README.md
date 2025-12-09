@@ -1,3 +1,94 @@
+<h1 align="center">🔧 Predictive Maintenance & Machine Failure Forecasting</h1>
+
+<p align="center">
+  <strong>Machine Learning • Imbalanced Learning • Feature Engineering • Model Optimisation • Streamlit Deployment</strong>
+</p>
+
+<p align="center">
+  An end-to-end predictive analytics system using Random Forest, XGBoost, SMOTE, and hyperparameter optimisation to forecast drilling machine failures with high recall and near-perfect AUC.
+  Built as part of my MSc Dissertation and included in my UK Global Talent Visa portfolio.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Random%20Forest-4B8BBE?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/XGBoost-EB4034?style=for-the-badge&logo=xgboost&logoColor=white" />
+  <img src="https://img.shields.io/badge/SMOTE-00A7B3?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Optuna-0D96F6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+</p>
+
+---
+
+<p align="center">
+  <em>This project demonstrates enterprise-level predictive analytics, model optimisation, and ML application development — suitable as technical evidence for the UK Global Talent Visa.</em>
+</p>
+
+---
+
+## 📌 Project Overview
+
+This project builds a **predictive maintenance system** that forecasts drilling machine failures using real operational data (20,000+ cycles, with a minority failure class).
+
+It demonstrates:
+
+- Handling of **imbalanced classification**  
+- Advanced **feature engineering**  
+- Evaluation and optimisation of **tree-based ensemble models**  
+- **Interpretability** through feature importance and permutation analysis  
+- Deployment of the final model as an interactive **Streamlit web application**
+
+---
+
+## 🎯 Objectives
+
+- Predict equipment failures *before* they occur  
+- Achieve **high recall** on the failure class (no missed failures)  
+- Understand which operational factors drive failure risk  
+- Deploy a practical tool that operators/engineers can use in real time  
+
+---
+
+## 🛠 Tech Stack
+
+- **Language:** Python  
+- **ML Libraries:** scikit-learn, XGBoost, imbalanced-learn, Optuna  
+- **Data Handling:** pandas, NumPy  
+- **Visualisation:** matplotlib, seaborn  
+- **Deployment:** Streamlit  
+- **Environment:** Jupyter Notebook / Python scripts  
+
+---
+
+## 📁 Repository Structure
+
+```bash
+predictive-maintenance/
+├── data/
+│   └── raw/                 # Raw drilling operations dataset
+├── notebooks/
+│   ├── 01_eda.ipynb         # Exploratory analysis
+│   ├── 02_modelling.ipynb   # Baseline models
+│   └── 03_optimisation.ipynb# Tuned models
+├── src/
+│   ├── preprocessing.py     # Cleaning & feature engineering
+│   ├── train_model.py       # Training pipeline
+│   └── utils.py             # Helper functions
+├── models/
+│   └── best_model.pkl       # Saved optimised model
+├── app/
+│   └── streamlit_app.py     # Deployed web application
+└── README.md
+
+
+
+
+
+
+
+
+
 # 📊 Optimisation of Predictive Maintenance Strategy
 ### Exploratory Analysis • Modelling • Evaluation • Deployment
 
@@ -140,13 +231,13 @@ Real-time prediction interface that outputs:
 - Recommended maintenance action  
 
 #### **8.4 Results Section**
-Visualises outcome metrics and supports human-in-the-loop decision-making.
+- Visualises outcome metrics and supports human-in-the-loop decision-making.
 
-This deployment transforms the research model into a **practical industrial tool**.
+- This deployment transforms the model into a **practical industrial tool**.
 
 ---
 
-# ⭐ Summary of Chapter Contribution
+# ⭐ Conclusion
 
 This project demonstrates:
 
