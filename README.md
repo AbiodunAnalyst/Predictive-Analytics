@@ -78,23 +78,7 @@ flowchart TD
     G --> H[🌐 Deployment<br>Streamlit Web App<br>- Input sliders/forms<br>- Failure probability<br>- Actionable output]
 ---
 
-flowchart LR
-    subgraph Training_Env[Training Environment]
-      A[📁 Historical Sensor Data] --> B[⚙️ Training Pipeline<br>Python + scikit-learn]
-      B --> C[✅ Optimised Model<br>(pickle/joblib)]
-    end
-
-    C --> D[🧩 Inference Service<br>Streamlit App]
-
-    subgraph User_Env[User Interface]
-      D --> E[👨‍🏭 Operator / Engineer<br>enters machine parameters]
-      E --> D
-    end
-
----
-
-# 📊 Optimisation of Predictive Maintenance Strategy
-### Exploratory Analysis • Modelling • Evaluation • Deployment
+# 📊 Analytics Process
 
 This section summarises the complete analytical workflow used in this predictive maintenance project from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
 
