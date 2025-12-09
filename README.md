@@ -24,7 +24,7 @@ Exploratory analysis focused on understanding the operational conditions associa
 ### **Key Observed Patterns**
 Based on Figures 4–10 in Chapter 4 :contentReference[oaicite:2]{index=2}:
 
-- **Higher cutting speeds** increased failure likelihood. ![](figure1)
+- **Higher cutting speeds** increased failure likelihood. ![]()
 - **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload.
 - **Power consumption spikes** were observed shortly before failures.
 - **Cooling variability** indicated overheating or excessive thermal load.
