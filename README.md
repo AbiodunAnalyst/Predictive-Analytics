@@ -62,7 +62,8 @@ It demonstrates:
 
 
 flowchart TD
-    A --> B[📁 Raw Sensor Data<br>Drilling Operations] --> B[🔍 Exploratory Data Analysis<br>- Distributions<br>- Correlations<br>- Failure patterns]
+
+    A --> [📁 Raw Sensor Data<br>Drilling Operations] --> B[🔍 Exploratory Data Analysis<br>- Distributions<br>- Correlations<br>- Failure patterns]
 
     B --> C[🧹 Data Preparation<br>- Train/Test split<br>- Scaling<br>- Handle imbalance (SMOTE)]
 
