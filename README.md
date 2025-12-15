@@ -203,7 +203,7 @@ The final optimised model was deployed using a **Streamlit application**, enabli
 
 ### Streamlit App Features:
 
-**App:** *[PredictiveApp](https://a8adtfzxaygmffjjqe5ums.streamlit.app)*
+**Predictive_App:** *[PredictiveApp](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)*
 
 #### **8.1 Input Section**
 Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
