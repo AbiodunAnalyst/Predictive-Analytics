@@ -225,7 +225,7 @@ Real-time prediction interface that outputs:
 
 ---
 
-# ⭐ Conclusion
+###  Conclusion
 
 This project demonstrates:
 
