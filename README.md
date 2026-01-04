@@ -156,15 +156,17 @@ This modelling framework addressed the challenge of imbalanced classes while imp
 
 ## 🧪 4. Model Performance
 
+Model configurations that perform exceptionally:
+
 ### **Random Forest + SMOTE**  
-- ROC-AUC: **0.997–0.998**  
+- ROC-AUC: **0.998**  
 - Recall (failure class): **1.00**  
 
 <img width="355" height="351" alt="image" src="https://github.com/user-attachments/assets/49f80282-4c81-4028-84a4-8dc41b55258a" />
 
 
 ### **Random Forest + SMOTE + Optuna**  
-- ROC-AUC: **0.997**  
+- ROC-AUC: **0.998**  
 - Recall: **1.00**
 
 <img width="524" height="612" alt="image" src="https://github.com/user-attachments/assets/65dcb534-1990-43e3-ae7a-c6bf0815d22f" />
@@ -215,9 +217,22 @@ Permutation importance confirmed the ranking above by showing that shuffling key
 
 ## 🖥️ 8. Deployment Using Streamlit
 
-The final optimised model was deployed using a **Streamlit application**, enabling real-time predictions in an interactive environment.  
+The final optimised model (**Random Forest + SMOTE + RandomizedSearchCV**) was deployed using a **Streamlit application**, enabling real-time predictions in an interactive environment.  
 
-### Streamlit App Features:
+### Web Application Features:
+  ###  **Web Application Development**
+  The web application was developed using Python within Visual Studio Code, enabling rapid iteration, debugging, and version control during the development process.
+  
+###  **Core Libraries and Frameworks**
+  - Streamlit - for building and deploying an interactive web-based analytics interface
+  - Pandas & NumPy - for data manipulation and numerical computation
+  - Matplotlib - for data visualisation
+  - Scikit-learn - for machine learning model development and evaluation
+###  **Deployment Platform**
+  - The application was deployed using Streamlit, allowing the analytics platform and machine learning model to be accessed through a lightweight, browser-based interface without requiring complex infrastructure.
+  - Streamlit was selected for deployment due to its suitability for rapid prototyping of data-driven applications and its ability to make analytical insights accessible to non-technical users.
+
+
 
 **Predictive_App:** *[PredictiveApp](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)*
 
