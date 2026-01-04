@@ -41,7 +41,7 @@ It demonstrates:
 ---
 
 Personal Contribution & Responsibilities
-
+---
 - Designed the system architecture
 - Developed the ML engine (Model)
 - Built the interactive UI
