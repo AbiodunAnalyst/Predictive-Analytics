@@ -217,20 +217,27 @@ Permutation importance confirmed the ranking above by showing that shuffling key
 
 ## 🖥️ 8. Deployment Using Streamlit
 
-The final optimised model (**Random Forest + SMOTE + RandomizedSearchCV**) was deployed using a **Streamlit application**, enabling real-time predictions in an interactive environment.  
-
+The final optimised model (**Random Forest + SMOTE + RandomizedSearchCV**) was deployed using a **Streamlit application**, 
+enabling real-time predictions in an interactive environment.  
+---
 ### Web Application Features:
+---
+
   ###  **Web Application Development**
-  The web application was developed using Python within Visual Studio Code, enabling rapid iteration, debugging, and version control during the development process.
+    The web application was developed using Python within Visual Studio Code, enabling rapid iteration, 
+    debugging, and version control during the development process.
   
-###  **Core Libraries and Frameworks**
-  - Streamlit - for building and deploying an interactive web-based analytics interface
-  - Pandas & NumPy - for data manipulation and numerical computation
-  - Matplotlib - for data visualisation
-  - Scikit-learn - for machine learning model development and evaluation
-###  **Deployment Platform**
-  - The application was deployed using Streamlit, allowing the analytics platform and machine learning model to be accessed through a lightweight, browser-based interface without requiring complex infrastructure.
-  - Streamlit was selected for deployment due to its suitability for rapid prototyping of data-driven applications and its ability to make analytical insights accessible to non-technical users.
+  ###  **Core Libraries and Frameworks**
+    - Streamlit - for building and deploying an interactive web-based analytics interface
+    - Pandas & NumPy - for data manipulation and numerical computation
+    - Matplotlib - for data visualisation
+    - Scikit-learn - for machine learning model development and evaluation
+
+  ###  **Deployment Platform**
+    - The application was deployed using Streamlit, allowing the analytics platform and machine learning model to be accessed through
+      a lightweight, browser-based interface without requiring complex infrastructure.
+    - Streamlit was selected for deployment due to its suitability for rapid prototyping of data-driven applications and its ability
+      to make analytical insights accessible to non-technical users.
 
 
 
