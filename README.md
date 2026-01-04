@@ -195,8 +195,8 @@ The models meet industrial reliability requirements where missing a failure can 
 ## 🌟 6. Feature Importance
 
 ![](figure11.jpg)
-Feature importance analysis revealed:
 
+Feature importance analysis revealed:
 1. **Feed Rate (vf)**  
 2. **Cutting Speed (vc)**  
 3. **Spindle Speed (n)**  
