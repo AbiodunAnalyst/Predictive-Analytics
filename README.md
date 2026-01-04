@@ -156,19 +156,24 @@ This modelling framework addressed the challenge of imbalanced classes while imp
 
 ## 🧪 4. Model Performance
 
-Three main model configurations were tested:
-
 ### **Random Forest + SMOTE**  
 - ROC-AUC: **0.997–0.998**  
 - Recall (failure class): **1.00**  
+
+<img width="355" height="351" alt="image" src="https://github.com/user-attachments/assets/49f80282-4c81-4028-84a4-8dc41b55258a" />
+
 
 ### **Random Forest + SMOTE + Optuna**  
 - ROC-AUC: **0.997**  
 - Recall: **1.00**
 
+<img width="524" height="612" alt="image" src="https://github.com/user-attachments/assets/65dcb534-1990-43e3-ae7a-c6bf0815d22f" />
+
 ### **Random Forest + SMOTE + RandomizedSearchCV**  
 - ROC-AUC: **0.998**  
 - Recall: **1.00**  
+
+<img width="556" height="651" alt="image" src="https://github.com/user-attachments/assets/04e28df0-5d79-48fe-96c6-6cd1a42bb3a8" />  
 
 These results demonstrate exceptional predictive capability in every optimised configuration, the model achieved **100% recall**, detecting all true failures, which is essential in high-risk predictive maintenance environments.  
 
@@ -231,7 +236,6 @@ Real-time prediction interface that outputs:
 
 #### **8.4 Results Section**
 - Visualises outcome metrics and supports human-in-the-loop decision-making.
-
 - This deployment transforms the model into a **practical industrial tool**.
 
 ---
@@ -239,7 +243,6 @@ Real-time prediction interface that outputs:
 ###  Conclusion
 
 This project demonstrates:
-
 - End-to-end analytical workflow from EDA to deployment  
 - Handling of imbalanced data using SMOTE and Borderline-SMOTE  
 - Advanced model tuning (Optuna, RandomizedSearchCV)  
