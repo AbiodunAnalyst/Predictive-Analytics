@@ -199,6 +199,7 @@ Feature importance analysis revealed:
 5. **Cooling Level**
 
 These features were the strongest contributors to failure prediction, supporting the mechanical interpretation of drilling stress and thermal load.  
+
 ---
 
 ## 🔄 7. Permutation Importance
