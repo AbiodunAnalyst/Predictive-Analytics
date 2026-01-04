@@ -230,7 +230,7 @@ enabling real-time predictions in an interactive environment.
   ###  **Core Libraries and Frameworks**
     - Streamlit - for building and deploying an interactive web-based analytics interface
     - Pandas & NumPy - for data manipulation and numerical computation
-    - Matplotlib - for data visualisation
+    - Plotly - for data visualisation
     - Scikit-learn - for machine learning model development and evaluation
 
   ###  **Deployment Platform**
@@ -239,9 +239,9 @@ enabling real-time predictions in an interactive environment.
     - Streamlit was selected for deployment due to its suitability for rapid prototyping of data-driven applications 
       and its ability to make analytical insights accessible to non-technical users.
 
-
-
-**Predictive_App:** *[PredictiveApp](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)*
+---
+### 🚀 Solution Features
+---
 
 #### **8.1 Input Section**
 Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
@@ -259,6 +259,8 @@ Real-time prediction interface that outputs:
 #### **8.4 Results Section**
 - Visualises outcome metrics and supports human-in-the-loop decision-making.
 - This deployment transforms the model into a **practical industrial tool**.
+
+**Predictive_App:** *[PredictiveApp](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)*
 
 ---
 
