@@ -223,7 +223,6 @@ enabling real-time predictions in an interactive environment.
 ---
 ### Web Application Features:
 ---
-
   ###  **Web Application Development**
     The web application was developed using Python within Visual Studio Code, enabling rapid iteration, 
     debugging, and version control during the development process.
