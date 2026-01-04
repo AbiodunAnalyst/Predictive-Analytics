@@ -40,6 +40,14 @@ It demonstrates:
 
 ---
 
+Personal Contribution & Responsibilities
+
+- Designed the system architecture
+- Developed the ML engine (Model)
+- Built the interactive UI
+
+---
+
 ## 🎯 Objectives
 
 - Predict equipment failures *before* they occur  
@@ -143,6 +151,7 @@ Multiple machine learning models were trained, including:
 - Hyperparameter optimisation using **RandomizedSearchCV** and **Optuna**
 
 This modelling framework addressed the challenge of imbalanced classes while improving model reliability and failure detection recall.  
+
 ---
 
 ## 🧪 4. Model Performance
@@ -162,6 +171,7 @@ Three main model configurations were tested:
 - Recall: **1.00**  
 
 These results demonstrate exceptional predictive capability in every optimised configuration, the model achieved **100% recall**, detecting all true failures, which is essential in high-risk predictive maintenance environments.  
+
 ---
 
 ## 🧩 5. Confusion Matrix Interpretation
