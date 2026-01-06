@@ -243,20 +243,20 @@ enabling real-time predictions in an interactive environment.
 ### 🚀 Solution Features
 ---
 
-#### **8.1 Input Section**
+#### **Input Section**
 Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
 
-#### **8.2 Preview Section**
+#### **Preview Section**
 Displays a snapshot of loaded or streamed operational data.
 
-#### **8.3 Prediction Section**
+#### **Prediction Section**
 Real-time prediction interface that outputs:
 
 - Prediction condition  
 - Probability of failure  
 - Recommended maintenance action  
 
-#### **8.4 Results Section**
+#### **Results Section**
 - Visualises outcome metrics and supports human-in-the-loop decision-making.
 - This deployment transforms the model into a **practical industrial tool**.
 
