@@ -143,7 +143,7 @@ These findings show that the physical workload on the machine (speed, feed, powe
 
 ## 🤖 3. Model Development
 
-Multiple machine learning models were trained, including:
+Multiple machine learning models were trained and imbalanced method was used which include:
 
 - **Random Forest**
 - **Extreme Gradient Boosting (XGBoost)**  
