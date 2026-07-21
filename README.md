@@ -1,73 +1,91 @@
-# Predictive Maintenance & Machine Failure Forecasting
+# Predictive Maintenance and Machine Failure Forecasting
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-live-FF4B4B)](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)
-[![License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
+[![Dataset License: CC BY--NC--SA 4.0](https://img.shields.io/badge/Dataset%20License-CC%20BY--NC--SA%204.0-orange.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-An end-to-end machine-learning project that explores imbalanced classification for drilling-machine failure prediction and exposes the analytical workflow through a browser-based Streamlit demonstration.
+An applied machine-learning and Streamlit project for exploring machine-failure risk from drilling-process data. The application accepts CSV or Excel input, validates the required features, visualises selected operating variables and applies a trained Random Forest classifier to generate a failure-risk prediction.
+
+> **Important:** This repository is an educational, research and portfolio demonstration. It is not a certified industrial monitoring, maintenance or safety system.
+
+## Live application
+
+- **Streamlit application:** https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/
+- **Application entry point:** [`MLapp_ped.py`](MLapp_ped.py)
 
 ## Problem addressed
 
-Equipment-failure datasets often contain far fewer failure records than normal operations. A model can appear accurate while missing the minority class that matters most. This project investigates that imbalance and compares modelling approaches intended to identify failure risk from operational variables.
+Machine-failure datasets can contain substantially fewer failure cases than normal-operation cases. Accuracy alone may therefore obscure poor performance on the minority class. This project explores predictive-maintenance classification with attention to failure detection, model evaluation and the practical presentation of predictions through an accessible web interface.
 
-## Public demonstration
+## Application workflow
 
-- Live app: https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/
-- App entry point: `MLapp_ped.py`
+1. Upload a CSV or Excel file.
+2. Validate that the required model features are present.
+3. Preview the uploaded records.
+4. Select one or more observations for analysis.
+5. Visualise cutting speed, feed, feed rate, power, cooling and process time.
+6. Apply the trained classifier to the selected observation.
+7. Display the predicted machine condition and estimated failure probability.
 
-The deployment is a technical demonstration and should not be treated as a certified industrial monitoring or safety system.
+The interface also displays an illustrative time-to-failure estimate derived from the predicted probability. This estimate is heuristic, has not been independently calibrated against real failure-time outcomes and must not be interpreted as an engineering forecast.
+
+## Required input features
+
+The deployed application expects the following columns:
+
+```text
+Cutting_speed
+Feed
+Feed_rate
+Power
+Cooling
+Process_Time
+Material_K
+Material_N
+Material_P
+Drill_Bit_Type_H
+Drill_Bit_Type_N
+Drill_Bit_Type_W
+```
 
 ## Dataset
 
-This project uses the **Explainable AI (XAI) Drilling Dataset**, published by Raphael Wallsberger on Kaggle.
+This project uses the **Explainable AI (XAI) Drilling Dataset**, published on Kaggle by Raphael Wallsberger.
 
-- Dataset source: https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset
-- Dataset licence: CC BY-NC-SA 4.0
-- Licence terms: https://creativecommons.org/licenses/by-nc-sa/4.0/
+- **Source:** https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset
+- **Dataset licence:** [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-The original dataset is not redistributed through this repository. Users should obtain it directly from the publisher's Kaggle page and comply with the applicable licence terms.
+The source dataset is not redistributed through this repository. Users should obtain it directly from the Kaggle publisher and comply with the applicable licence terms.
 
-The dataset was processed for exploratory analysis, feature preparation, machine-learning evaluation and application demonstration. Any changes made during preprocessing are described in the project documentation or source code.
+The dataset was processed for exploratory analysis, feature preparation, machine-learning evaluation and application demonstration. Where the material is shared or adapted, users must provide appropriate attribution, indicate changes, restrict use to non-commercial purposes and comply with the ShareAlike condition. This repository does not imply endorsement by the dataset publisher or Kaggle.
 
-This repository does not imply endorsement by the dataset creator or Kaggle.
+## Technical implementation
 
-## Technical workflow
-
-1. Load and validate operational data.
-2. Explore feature distributions, correlations and failure patterns.
-3. Split training and test data without leaking test information.
-4. Address class imbalance using resampling strategies evaluated in the project.
-5. Train and compare tree-based classification models.
-6. Evaluate minority-class recall, ROC-AUC, confusion matrices and generalisation.
-7. Examine feature and permutation importance.
-8. expose a selected workflow through Streamlit.
-
-## Technologies
+The public application is implemented with:
 
 - Python
-- pandas and NumPy
-- scikit-learn
-- XGBoost
-- imbalanced-learn
-- Optuna
-- Matplotlib and seaborn
 - Streamlit
+- pandas and NumPy
+- scikit-learn-compatible model serialisation
+- Plotly
+- openpyxl for Excel input
+
+The application loads the trained model from `PM_random_forest_model.pkl`, checks uploaded data against the expected feature schema and uses the model's `predict` and `predict_proba` methods to produce the displayed classification and probability.
 
 ## Reported experimental results
 
-The project notebook/README reports ROC-AUC of 0.998 and failure-class recall of 1.00 for selected configurations.
+Project experiments reported a ROC-AUC of **0.998** and failure-class recall of **1.00** for a selected configuration. These are project results rather than independent industrial validation. They should be interpreted in the context of the data split, sampling design, dataset representativeness and the risks of applying a model outside its source population.
 
-These are project results, not independent industrial validation. They should be interpreted alongside:
+## Professional feedback
 
-- the train/test split and sampling design;
-- the possibility of correlated or duplicated records;
-- dataset representativeness;
-- uncertainty outside the source data;
-- the cost of false positives and false negatives in a real operational setting.
+In September 2024, the application received documented professional feedback addressing its workability, simplicity and user-friendly design. The reviewer also identified possible future development through maintenance-management integration and longer-term trend analysis.
 
-> **[ACTION REQUIRED]** Add one reproducible command or notebook section that regenerates the reported metrics from the documented dataset. Include the exact random seed and package versions.
+This feedback represents an informed review of the application's usability and potential development path. It does **not** establish formal organisational adoption, production deployment or independent validation of the model's statistical performance.
 
 ## Run locally
+
+Clone the repository and create a virtual environment:
 
 ```bash
 git clone https://github.com/AbiodunAnalyst/Predictive-Analytics.git
@@ -75,47 +93,60 @@ cd Predictive-Analytics
 python -m venv .venv
 ```
 
-Activate the virtual environment, then install the repository’s verified dependencies:
+Activate the environment and install the packages used by the public application:
 
 ```bash
-pip install -r requirements.txt
+pip install streamlit pandas numpy plotly openpyxl scikit-learn
 streamlit run MLapp_ped.py
 ```
 
-> **[ACTION REQUIRED]** Generate and test `requirements.txt` from a clean environment before publishing these instructions.
+The trained model file `PM_random_forest_model.pkl` must be present in the repository root for prediction to work. A version-pinned `requirements.txt` should be generated and tested in a clean environment before the project is treated as fully reproducible.
 
 ## Repository structure
 
 ```text
-MLapp_ped.py          Streamlit application
-README.md             Project documentation
-requirements.txt      Reproducible Python dependencies
-figures/              Recommended location for generated figures
-notebooks/            Recommended location for model experiments
+MLapp_ped.py                  Streamlit application
+PM_random_forest_model.pkl   Serialised Random Forest model
+README.md                     Project documentation
+LICENSE                       Licence for original repository code
+CONTRIBUTING.md               Contribution guidance
+SECURITY.md                   Security reporting guidance
+CITATION.cff                  Citation metadata
 ```
 
-The existing files may need reorganising into the recommended folders. Preserve history through normal file-move commits.
+## Limitations and responsible use
 
-## Intended use and limitations
-
-- Educational and portfolio demonstration of predictive-maintenance analytics.
-- Not a substitute for engineering inspection, safety controls or certified maintenance systems.
-- Performance has not been independently validated across different machines, sites or operating regimes.
-- Uploaded data must not contain confidential or personal information.
-- A prediction should not be the sole basis for safety-critical action.
+- The results have not been independently validated across different machines, sites or operating conditions.
+- Uploaded files should not contain confidential, personal or commercially sensitive information.
+- Predictions must not replace engineering inspection, manufacturer guidance or established safety controls.
+- The failure probability is model-dependent and is not a direct measurement of physical condition.
+- The time-to-failure display is an illustrative heuristic and is not a validated remaining-useful-life model.
+- Model performance may change substantially when the input distribution differs from the training data.
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please include reproducible steps, tests where applicable and a clear explanation of the proposed change.
+Constructive issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please provide reproducible steps, tests where appropriate and a clear explanation of the proposed improvement.
+
+Useful review areas include:
+
+- reproducibility and environment pinning;
+- input-schema and data-quality validation;
+- model calibration and uncertainty;
+- evaluation on independent drilling datasets;
+- tests for prediction and file-upload behaviour;
+- replacement of the illustrative time-to-failure calculation with a properly validated method.
 
 ## Security
 
-See [SECURITY.md](SECURITY.md). Do not include credentials, confidential operational records or private datasets in issues or pull requests.
+See [SECURITY.md](SECURITY.md). Do not place credentials, confidential operational records or private datasets in issues, pull requests or uploaded examples.
 
 ## Citation
 
-Citation metadata is provided in [CITATION.cff](CITATION.cff).
+Citation metadata is available in [CITATION.cff](CITATION.cff).
 
-## Licence
+## Licensing
 
-Code authored for this repository is available under the [MIT License](LICENSE). Third-party datasets, images and other assets remain subject to their original terms and are not relicensed by this repository.
+Original source code authored for this repository is available under the [MIT License](LICENSE), unless otherwise stated.
+
+The XAI Drilling Dataset is **not** covered by the MIT License. It remains subject to CC BY-NC-SA 4.0. Third-party datasets, libraries, images, model artefacts and other materials may be governed by separate terms and are not relicensed by this repository.
+
