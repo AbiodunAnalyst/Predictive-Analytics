@@ -96,11 +96,13 @@ python -m venv .venv
 Activate the environment and install the packages used by the public application:
 
 ```bash
-pip install streamlit pandas numpy plotly openpyxl scikit-learn
+pip install -r requirements.txt
 streamlit run MLapp_ped.py
 ```
 
-The trained model file `PM_random_forest_model.pkl` must be present in the repository root for prediction to work. A version-pinned `requirements.txt` should be generated and tested in a clean environment before the project is treated as fully reproducible.
+The current `requirements.txt` declares Streamlit, pandas, NumPy, scikit-learn, Plotly and openpyxl, which correspond to the dependencies used by the public application. The trained model file `PM_random_forest_model.pkl` must also be present in the repository root for prediction to work.
+
+The dependency file currently identifies the required packages without fixing exact versions. For stronger reproducibility, a future release should record versions tested together in a clean environment.
 
 ## Repository structure
 
@@ -108,6 +110,7 @@ The trained model file `PM_random_forest_model.pkl` must be present in the repos
 MLapp_ped.py                  Streamlit application
 PM_random_forest_model.pkl   Serialised Random Forest model
 README.md                     Project documentation
+requirements.txt              Application dependencies
 LICENSE                       Licence for original repository code
 CONTRIBUTING.md               Contribution guidance
 SECURITY.md                   Security reporting guidance
@@ -149,4 +152,3 @@ Citation metadata is available in [CITATION.cff](CITATION.cff).
 Original source code authored for this repository is available under the [MIT License](LICENSE), unless otherwise stated.
 
 The XAI Drilling Dataset is **not** covered by the MIT License. It remains subject to CC BY-NC-SA 4.0. Third-party datasets, libraries, images, model artefacts and other materials may be governed by separate terms and are not relicensed by this repository.
-
