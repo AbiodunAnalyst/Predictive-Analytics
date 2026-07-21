@@ -19,9 +19,17 @@ The deployment is a technical demonstration and should not be treated as a certi
 
 ## Dataset
 
-The current project description reports approximately 20,000 operational records, including 1,001 failure cases and 18,999 non-failure cases.
+This project uses the **Explainable AI (XAI) Drilling Dataset**, published by Raphael Wallsberger on Kaggle.
 
-> **[ACTION REQUIRED]** Add the original dataset title, publisher, source URL, access date and licence. State whether the dataset may be redistributed. If redistribution is not permitted, remove the dataset from the repository and provide a download/preparation script instead.
+- Dataset source: https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset
+- Dataset licence: CC BY-NC-SA 4.0
+- Licence terms: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+The original dataset is not redistributed through this repository. Users should obtain it directly from the publisher's Kaggle page and comply with the applicable licence terms.
+
+The dataset was processed for exploratory analysis, feature preparation, machine-learning evaluation and application demonstration. Any changes made during preprocessing are described in the project documentation or source code.
+
+This repository does not imply endorsement by the dataset creator or Kaggle.
 
 ## Technical workflow
 
