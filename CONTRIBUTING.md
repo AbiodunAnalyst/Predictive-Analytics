@@ -27,4 +27,4 @@ feat: add reproducible model-evaluation command
 test: validate prediction input schema
 ```
 
-By contributing, you agree that your contribution may be distributed under the repository’s MIT licence.
+By contributing original code or documentation, you agree that your contribution may be distributed under the repository's MIT License. Do not submit the XAI Drilling Dataset or other third-party material unless redistribution is expressly permitted. Dataset-derived material must comply with the original CC BY-NC-SA 4.0 terms, including attribution, non-commercial use and ShareAlike requirements.
