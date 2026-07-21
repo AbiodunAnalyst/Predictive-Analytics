@@ -1,277 +1,113 @@
-<h1 align="center">🔧 Predictive Maintenance & Machine Failure Forecasting</h1>
+# Predictive Maintenance & Machine Failure Forecasting
 
-<p align="center">
-  <strong>Machine Learning • Imbalanced Learning • Feature Engineering • Model Optimisation • Streamlit Deployment</strong>
-</p>
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-live-FF4B4B)](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)
+[![License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
 
-<p align="center">
-  An end-to-end predictive analytics system using Random Forest, XGBoost, SMOTE, and hyperparameter optimisation to forecast drilling machine failures with high recall and near-perfect AUC.
-</p>
+An end-to-end machine-learning project that explores imbalanced classification for drilling-machine failure prediction and exposes the analytical workflow through a browser-based Streamlit demonstration.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Random%20Forest-4B8BBE?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/XGBoost-EB4034?style=for-the-badge&logo=xgboost&logoColor=white" />
-  <img src="https://img.shields.io/badge/SMOTE-00A7B3?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Optuna-0D96F6?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
-</p>
+## Problem addressed
 
----
+Equipment-failure datasets often contain far fewer failure records than normal operations. A model can appear accurate while missing the minority class that matters most. This project investigates that imbalance and compares modelling approaches intended to identify failure risk from operational variables.
 
-<p align="center">
-  <em>This project demonstrates enterprise-level predictive analytics, model optimisation, and ML application development.</em>
-</p>
+## Public demonstration
 
----
+- Live app: https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/
+- App entry point: `MLapp_ped.py`
 
-## 📌 Project Overview
+The deployment is a technical demonstration and should not be treated as a certified industrial monitoring or safety system.
 
-This project builds a **predictive maintenance system** that forecasts drilling machine failures using real operational data (20,000+ cycles, with a minority failure class).
+## Dataset
 
-It demonstrates:
+The current project description reports approximately 20,000 operational records, including 1,001 failure cases and 18,999 non-failure cases.
 
-- Handling of **imbalanced classification**  
-- Advanced **feature engineering**  
-- Evaluation and optimisation of **tree-based ensemble models**  
-- **Interpretability** through feature importance and permutation analysis  
-- Deployment of the final model as an interactive **Streamlit web application**
+> **[ACTION REQUIRED]** Add the original dataset title, publisher, source URL, access date and licence. State whether the dataset may be redistributed. If redistribution is not permitted, remove the dataset from the repository and provide a download/preparation script instead.
 
----
+## Technical workflow
 
-Personal Contribution & Responsibilities
----
-- Designed the system architecture
-- Developed the ML engine (Model)
-- Built the interactive UI
+1. Load and validate operational data.
+2. Explore feature distributions, correlations and failure patterns.
+3. Split training and test data without leaking test information.
+4. Address class imbalance using resampling strategies evaluated in the project.
+5. Train and compare tree-based classification models.
+6. Evaluate minority-class recall, ROC-AUC, confusion matrices and generalisation.
+7. Examine feature and permutation importance.
+8. expose a selected workflow through Streamlit.
 
----
+## Technologies
 
-## 🎯 Objectives
+- Python
+- pandas and NumPy
+- scikit-learn
+- XGBoost
+- imbalanced-learn
+- Optuna
+- Matplotlib and seaborn
+- Streamlit
 
-- Predict equipment failures *before* they occur  
-- Achieve **high recall** on the failure class (no missed failures)  
-- Understand which operational factors drive failure risk  
-- Deploy a practical tool that operators/engineers can use in real time  
+## Reported experimental results
 
----
+The project notebook/README reports ROC-AUC of 0.998 and failure-class recall of 1.00 for selected configurations.
 
-## 🛠 Tech Stack
+These are project results, not independent industrial validation. They should be interpreted alongside:
 
-- **Language:** Python  
-- **ML Libraries:** scikit-learn, XGBoost, imbalanced-learn, Optuna  
-- **Data Handling:** pandas, NumPy  
-- **Visualisation:** matplotlib, seaborn  
-- **Deployment:** Streamlit  
-- **Environment:** Jupyter Notebook / Python scripts  
+- the train/test split and sampling design;
+- the possibility of correlated or duplicated records;
+- dataset representativeness;
+- uncertainty outside the source data;
+- the cost of false positives and false negatives in a real operational setting.
 
----
+> **[ACTION REQUIRED]** Add one reproducible command or notebook section that regenerates the reported metrics from the documented dataset. Include the exact random seed and package versions.
 
+## Run locally
 
-flowchart TD
+```bash
+git clone https://github.com/AbiodunAnalyst/Predictive-Analytics.git
+cd Predictive-Analytics
+python -m venv .venv
+```
 
-    A --> [📁 Raw Sensor Data<br>Drilling Operations] --> B[🔍 Exploratory Data Analysis<br>- Distributions<br>- Correlations<br>- Failure patterns]
+Activate the virtual environment, then install the repository’s verified dependencies:
 
-    B --> C[🧹 Data Preparation<br>- Train/Test split<br>- Scaling<br>- Handle imbalance (SMOTE)]
+```bash
+pip install -r requirements.txt
+streamlit run MLapp_ped.py
+```
 
-    C --> D[🤖 Baseline Models<br>- Random Forest<br>- XGBoost]
+> **[ACTION REQUIRED]** Generate and test `requirements.txt` from a clean environment before publishing these instructions.
 
-    D --> E[⚙️ Model Optimisation<br>- SMOTE + Random Forest<br>- SMOTE + Optuna<br>- SMOTE + RandomizedSearchCV]
+## Repository structure
 
-    E --> F[📊 Evaluation<br>- ROC-AUC<br>- Recall (failure class)<br>- Confusion matrix]
+```text
+MLapp_ped.py          Streamlit application
+README.md             Project documentation
+requirements.txt      Reproducible Python dependencies
+figures/              Recommended location for generated figures
+notebooks/            Recommended location for model experiments
+```
 
-    F --> G[🧠 Interpretation<br>- Feature importance<br>- Permutation importance<br>- Failure driver analysis]
+The existing files may need reorganising into the recommended folders. Preserve history through normal file-move commits.
 
-    G --> H[🌐 Deployment<br>Streamlit Web App<br>- Input sliders/forms<br>- Failure probability<br>- Actionable output]
----
+## Intended use and limitations
 
-# 📊 Analytics Process
+- Educational and portfolio demonstration of predictive-maintenance analytics.
+- Not a substitute for engineering inspection, safety controls or certified maintenance systems.
+- Performance has not been independently validated across different machines, sites or operating regimes.
+- Uploaded data must not contain confidential or personal information.
+- A prediction should not be the sole basis for safety-critical action.
 
-This section summarises the complete analytical workflow used in this predictive maintenance project from understanding the dataset to developing optimised machine learning models and deploying the final solution through Streamlit. The analysis transforms raw drilling-machine operational data into actionable insights for failure prediction.  
+## Contributing
 
----
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please include reproducible steps, tests where applicable and a clear explanation of the proposed change.
 
-## 🔍 1. Dataset Overview
+## Security
 
-The dataset consists of **20,000 drilling operations**, with each record containing 10 operational features and a binary failure indicator. The breakdown is:
+See [SECURITY.md](SECURITY.md). Do not include credentials, confidential operational records or private datasets in issues or pull requests.
 
-- **1,001 failure cases** (≈5.0%)  
-- **18,999 successful operations** (≈95.0%)
+## Citation
 
-This substantial class imbalance strongly influenced the modelling strategy, requiring the use of SMOTE and Borderline-SMOTE to ensure balanced representation during training.  
+Citation metadata is provided in [CITATION.cff](CITATION.cff).
 
----
+## Licence
 
-## 📈 2. Exploratory Data Analysis (EDA)
-
-Exploratory analysis focused on understanding the operational conditions associated with failures.
-
-### **Key Observed Patterns**
-
-- **Higher cutting speeds** increased failure likelihood. ![](figure4.jpg)
-
-- **Feed and feed rate** values were significantly higher in failure cases, suggesting mechanical overload. ![](figure5.jpg) ![](figure6.jpg)
-
-- **Power consumption spikes** were observed shortly before failures. ![](figure7.jpg)
-
-- **Cooling variability** indicated overheating or excessive thermal load. ![](figure8.jpg)
-
-- **Longer process times** correlated moderately with increased failure probability. ![](figure9.jpg)
-
-These patterns informed feature engineering decisions and validated the relevance of sensor metrics in predicting machine health.
-
----
-
-## 🔗 2.1 Correlation Analysis
- 
-![](figure10.jpg)
-
-### **Strong Positive Correlations**
-- Cutting speed ↔ Feed rate: **0.82**  
-- Cutting speed ↔ Power: **0.93**  
-- Material_N ↔ Feed rate: **0.93**  
-- Material_N ↔ Power: **0.97**  
-
-### **Failure-related Correlations**
-- Material_P ↔ Failure: **0.64**  
-- Process time ↔ Failure: **0.38**
-
-These findings show that the physical workload on the machine (speed, feed, power) directly increases the mechanical stress leading to failures.
-
----
-
-## 🤖 3. Model Development
-
-Multiple machine learning models were trained and imbalanced method was used which include:
-
-- **Random Forest**
-- **Extreme Gradient Boosting (XGBoost)**  
-- Data resampling with **SMOTE** and **Borderline-SMOTE**
-- Hyperparameter optimisation using **RandomizedSearchCV** and **Optuna**
-
-This modelling framework addressed the challenge of imbalanced classes while improving model reliability and failure detection recall.  
-
----
-
-## 🧪 4. Model Performance
-
-Model configurations that perform exceptionally:
-
-### **Random Forest + SMOTE**  
-- ROC-AUC: **0.998**  
-- Recall (failure class): **1.00**  
-
-<img width="355" height="351" alt="image" src="https://github.com/user-attachments/assets/49f80282-4c81-4028-84a4-8dc41b55258a" />
-
-
-### **Random Forest + SMOTE + Optuna**  
-- ROC-AUC: **0.998**  
-- Recall: **1.00**
-
-<img width="524" height="612" alt="image" src="https://github.com/user-attachments/assets/65dcb534-1990-43e3-ae7a-c6bf0815d22f" />
-
-### **Random Forest + SMOTE + RandomizedSearchCV**  
-- ROC-AUC: **0.998**  
-- Recall: **1.00**  
-
-<img width="556" height="651" alt="image" src="https://github.com/user-attachments/assets/04e28df0-5d79-48fe-96c6-6cd1a42bb3a8" />  
-
-These results demonstrate exceptional predictive capability in every optimised configuration, the model achieved **100% recall**, detecting all true failures, which is essential in high-risk predictive maintenance environments.  
-
----
-
-## 🧩 5. Confusion Matrix Interpretation
-
-Across optimised models:
-
-- **True Positives:** All failure cases correctly identified  
-- **False Negatives:** **0** (the most critical metric)  
-- **False Positives:** Low and acceptable  
-- **True Negatives:** High accuracy  
-
-The models meet industrial reliability requirements where missing a failure can be extremely costly or dangerous.  
-
----
-
-## 🌟 6. Feature Importance
-
-![](figure11.jpg)
-
-Feature importance analysis revealed:
-1. **Feed Rate (vf)**  
-2. **Cutting Speed (vc)**  
-3. **Spindle Speed (n)**  
-4. **Power Consumption (Pc)**  
-5. **Cooling Level**
-
-These features were the strongest contributors to failure prediction, supporting the mechanical interpretation of drilling stress and thermal load.  
-
----
-
-## 🔄 7. Permutation Importance
-
-Permutation importance confirmed the ranking above by showing that shuffling key features caused significant drops in model performance especially **Feed Rate** and **Cutting Speed**, which act as core predictive signals.  
-
----
-
-## 🖥️ 8. Deployment Using Streamlit
-
-The final optimised model (**Random Forest + SMOTE + RandomizedSearchCV**) was deployed using a **Streamlit application**, 
-enabling real-time predictions in an interactive environment. 
-
----
-### Web Application Features:
----
-  ###  **Web Application Development**
-    The web application was developed using Python within Visual Studio Code, enabling rapid iteration, 
-    debugging, and version control during the development process.
-  
-  ###  **Core Libraries and Frameworks**
-    - Streamlit - for building and deploying an interactive web-based analytics interface
-    - Pandas & NumPy - for data manipulation and numerical computation
-    - Plotly - for data visualisation
-    - Scikit-learn - for machine learning model development and evaluation
-
-  ###  **Deployment Platform**
-    - The application was deployed using Streamlit, allowing the analytics platform and machine learning model to be 
-      accessed through a lightweight, browser-based interface without requiring complex infrastructure.
-    - Streamlit was selected for deployment due to its suitability for rapid prototyping of data-driven applications 
-      and its ability to make analytical insights accessible to non-technical users.
-
----
-### 🚀 Solution Features
----
-
-#### **Input Section**
-Users manually enter operational parameters (speed, feed rate, cooling level, etc.).
-
-#### **Preview Section**
-Displays a snapshot of loaded or streamed operational data.
-
-#### **Prediction Section**
-Real-time prediction interface that outputs:
-
-- Prediction condition  
-- Probability of failure  
-- Recommended maintenance action  
-
-#### **Results Section**
-- Visualises outcome metrics and supports human-in-the-loop decision-making.
-- This deployment transforms the model into a **practical industrial tool**.
-
-**Predictive_App:** *[PredictiveApp](https://predictivemaintenecemodelproject-6lvf7mfwxh8mkf5hwxdf7s.streamlit.app/)*
-
----
-
-###  Conclusion
-
-This project demonstrates:
-- End-to-end analytical workflow from EDA to deployment  
-- Handling of imbalanced data using SMOTE and Borderline-SMOTE  
-- Advanced model tuning (Optuna, RandomizedSearchCV)  
-- Exceptional model performance (ROC-AUC 0.998, Recall 1.00)  
-- Feature and permutation importance for interpretability  
-- Real-time deployment using Streamlit  
-
-
+Code authored for this repository is available under the [MIT License](LICENSE). Third-party datasets, images and other assets remain subject to their original terms and are not relicensed by this repository.
